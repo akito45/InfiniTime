@@ -257,7 +257,7 @@ void SystemTask::Work() {
           if (isSleeping && !isWakingUp) {
             GoToRunning();
           }
-          motorController.SetDuration(35);
+          motorController.VibrateTune(motorController.TuneType::NOTIFICATION);
           displayApp.PushMessage(Pinetime::Applications::Display::Messages::NewNotification);
           break;
         case Messages::OnTimerDone:
@@ -315,7 +315,7 @@ void SystemTask::Work() {
           stepCounterMustBeReset = true;
           break;
         case Messages::OnChargingEvent:
-          motorController.SetDuration(15);
+          motorController.VibrateTune(motorController.TuneType::SHORT);
 	  // Battery level is updated on every message - there's no need to do anything
           break;
 

@@ -45,7 +45,7 @@ Notifications::Notifications(DisplayApp* app,
 
     lv_line_set_points(timeoutLine, timeoutLinePoints, 2);
     timeoutTickCountStart = xTaskGetTickCount();
-    timeoutTickCountEnd = timeoutTickCountStart + (5 * 1024);
+    timeoutTickCountEnd = timeoutTickCountStart + (25 * 1024);
   }
 }
 
